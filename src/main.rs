@@ -1,4 +1,4 @@
-use minigrep::{search, search_case_insensitive};
+use minigrep_jiangzh0322::utils::{search, search_case_insensitive};
 use std::env;
 use std::error::Error;
 use std::fs;

@@ -5,6 +5,8 @@
 pub use self::kinds::PrimaryColor;
 pub use self::kinds::SecondaryColor;
 pub use self::utils::mix;
+pub use self::utils::search;
+pub use self::utils::search_case_insensitive;
 
 pub mod kinds {
     /// The primary colors according to the RYB color model
@@ -30,21 +32,21 @@ pub mod utils {
     pub fn mix(c1: PrimaryColor, c2: PrimaryColor) -> SecondaryColor {
         SecondaryColor::Green
     }
-}
 
-pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    contents
-        .lines()
-        .filter(|line| line.contains(query))
-        .collect()
-}
+    pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+        contents
+            .lines()
+            .filter(|line| line.contains(query))
+            .collect()
+    }
 
-pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    let query = query.to_lowercase();
-    contents
-        .lines()
-        .filter(|line| line.to_lowercase().contains(&query))
-        .collect()
+    pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+        let query = query.to_lowercase();
+        contents
+            .lines()
+            .filter(|line| line.to_lowercase().contains(&query))
+            .collect()
+    }
 }
 
 /// Adds one to the number given.
