@@ -3,5 +3,6 @@ name = "minigrep-jiangzh0322"
 license = "MIT"
 version = "0.1.0"
 edition = "2024"
+description = "A Rust application for test purpose!"
 
 [dependencies]
